@@ -10,7 +10,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://react-blog-backend-pshn.onrender.com" }));
 app.use("/uploads", express.static(__dirname + "/uploads"));
 connectDB();
 app.use("/api/user", userRouter);
