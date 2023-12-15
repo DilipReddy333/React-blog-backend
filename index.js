@@ -12,8 +12,10 @@ const port = 3000;
 app.use(express.json());
 app.use(
   cors({
-    "origin": "https://ultimate-blog.onrender.com",
+    "origin": "*",
     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204,
   })
 );
 app.use("/uploads", express.static(__dirname + "/uploads"));
